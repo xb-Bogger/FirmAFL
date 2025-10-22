@@ -1,4 +1,5 @@
-     /* emulated ioctl list */
+#include <linux/sockios.h>
+/* emulated ioctl list */
 
      IOCTL(TCGETS, IOC_R, MK_PTR(MK_STRUCT(STRUCT_termios)))
      IOCTL(TCSETS, IOC_W, MK_PTR(MK_STRUCT(STRUCT_termios)))
