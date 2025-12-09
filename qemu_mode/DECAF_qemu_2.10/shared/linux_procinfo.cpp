@@ -30,8 +30,8 @@
 #include <errno.h>
 #include <string.h>
 #include <stdio.h>
-#include <tr1/unordered_map>
-#include <tr1/unordered_set>
+#include <unordered_map>
+#include <unordered_set>
 
 #include <boost/foreach.hpp>
 #include <boost/property_tree/ptree.hpp>

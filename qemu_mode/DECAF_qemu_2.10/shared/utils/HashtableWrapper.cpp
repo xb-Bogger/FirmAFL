@@ -22,14 +22,14 @@ http://code.google.com/p/decaf-platform/
 #include "qemu/osdep.h"
 #include "cpu.h"
 
-#include <tr1/unordered_set>
+#include <unordered_set>
 
 #include "HashtableWrapper.h"
 #include "Output.h"
 #include "DECAF_types.h"
 
-using namespace std::tr1;
-
+//using namespace std::tr1;
+using namespace std;
 typedef unordered_set<uint32_t> uset;
 
 Hashtable* Hashtable_new()
@@ -102,7 +102,7 @@ void Hashtable_print(FILE* fp, Hashtable* pHash)
   }
 }
 
-#include <tr1/unordered_map>
+#include <unordered_map>
 
 typedef unordered_map<uint32_t, uint32_t> cset;
 

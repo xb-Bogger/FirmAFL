@@ -35,7 +35,7 @@ http://code.google.com/p/decaf-platform/
 #include <errno.h>
 #include <string.h>
 #include <stdio.h>
-#include <tr1/unordered_map>
+#include <unordered_map>
 #include <stdlib.h>
 
 
@@ -98,7 +98,7 @@ done:
 int is_fullname_retrieved(process *proc)
 {
   module * m = NULL;
-  unordered_map<uint32_t, module *>::iterator iter;
+  std::unordered_map<uint32_t, module *>::iterator iter;
   if(proc == NULL)
     return 1;
 
@@ -133,7 +133,7 @@ int procmod_insert_modinfo(uint32_t pid, uint32_t cr3, const char *name,
 {
   assert(strlen(name) < VMI_MAX_MODULE_PROCESS_NAME_LEN);
   assert(strlen(full_name) < VMI_MAX_MODULE_FULL_NAME_LEN);
-  unordered_map<uint32_t, process *>::iterator iter = process_pid_map.find(
+  std::unordered_map<uint32_t, process *>::iterator iter = process_pid_map.find(
       pid);
   process *proc;
 

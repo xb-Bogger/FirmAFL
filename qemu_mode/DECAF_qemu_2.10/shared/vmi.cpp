@@ -8,8 +8,8 @@
 #include <errno.h>
 #include <string.h>
 #include <stdio.h>
-#include <tr1/unordered_map>
-#include <tr1/unordered_set>
+#include <unordered_map>
+#include <unordered_set>
 #include <stdlib.h>
 #include <unistd.h>
 #include <signal.h>
@@ -47,7 +47,7 @@ extern "C" {
 
 
 using namespace std;
-using namespace std::tr1;
+//using namespace std::tr1;
 
 //map cr3 to process_info_t
 unordered_map < uint32_t, process * >process_map;

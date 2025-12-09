@@ -21,9 +21,9 @@
 */
 
 #ifdef __cplusplus
+#include "qemu/osdep.h"
 extern "C" {
 #endif /* __cplusplus */
-#include "qemu/osdep.h"
 #include "cpu.h"
 #include "config.h"
 #include "hw/hw.h" // AWH
@@ -42,8 +42,8 @@ extern "C" {
 #include <errno.h>
 #include <string.h>
 #include <stdio.h>
-#include <tr1/unordered_map>
-#include <tr1/unordered_set>
+#include <unordered_map>
+#include <unordered_set>
 #include <stdlib.h>
 #include <unistd.h>
 #include <signal.h>
@@ -70,7 +70,7 @@ extern "C" {
 #include "shared/utils/Output.h"
 
 using namespace std;
-using namespace std::tr1;
+//using namespace std::tr1;
 
 #define BREAK_IF(x) if(x) break
 #define MAX_PARAM_PREFIX_LEN (64 - sizeof(target_ptr))
