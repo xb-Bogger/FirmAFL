@@ -224,6 +224,7 @@ sleuthkit: $(SLEUTHKIT_SHARED_LIB)
 
 $(SLEUTHKIT_SHARED_LIB):
 	@echo "Building Sleuthkit, please wait..."
+	$(call quiet-command,cd ./shared/sleuthkit && ./configure --prefix=$$(pwd) --disable-java > /dev/null 2>&1,"  CONF  Sleuthkit")
 	$(call quiet-command,$(MAKE) -j32 -C ./shared/sleuthkit > /dev/null 2>&1,"  GEN   Sleuthkit")
 	$(call quiet-command,$(MAKE) -C ./shared/sleuthkit install > /dev/null 2>&1,"  PREP  Sleuthkit headers/libs")
 

@@ -27,14 +27,18 @@ We design and implement FIRM-AFL, an enhancement of AFL for fuzzing IoT firmware
 
 Our system has two parts: system mode and user mode. We compile them separately for now.
 
+If your device environment has a libewf environment, please remove it before recompiling. This will cause linking errors. Compared to modifying complex code, deleting the libewf library is the most economical approach, and it will not affect the functionality.
+
+sudo apt-get remove libewf-dev
+
 ### User mode 
 	cd user_mode/
-	./configure --target-list=mipsel-linux-user,mips-linux-user,arm-linux-user --static --disable-werror
+	./configure --target-list=mipsel-linux-user,mips-linux-user,arm-linux-user --static --disable-werror --python=/usr/bin/python2
 	make
 
 ### System mode
 	cd qemu_mode/DECAF_qemu_2.10/
-	./configure --target-list=mipsel-softmmu,mips-softmmu,arm-softmmu --disable-werror
+	./configure --target-list=mipsel-softmmu,mips-softmmu,arm-softmmu --disable-werror --python=/usr/bin/python2
 	make
 
 ## Usage
